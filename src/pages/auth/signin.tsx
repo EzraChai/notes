@@ -20,20 +20,20 @@ export default function SignIn({
   errors,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   if (errors === "Callback") {
-    errors = "Please give permission to sign in.";
+    errors = "请您授权权限。";
   }
   if (errors === "OAuthAccountNotLinked") {
-    errors = "Please use another provider to sign in.";
+    errors = "请您使用其他供应商。";
   }
 
   return (
     <div className=" mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center gap-4">
       {errors && (
         <Alert
-          className="w-[290px] bg-destructive text-destructive-foreground"
+          className="w-[220px] bg-destructive text-destructive-foreground"
           variant="destructive"
         >
-          <AlertTitle className="font-semibold text-primary">Error</AlertTitle>
+          <AlertTitle className="font-semibold text-primary">错误</AlertTitle>
           <AlertDescription className=" text-secondary-foreground">
             {errors}
           </AlertDescription>
@@ -42,7 +42,7 @@ export default function SignIn({
       <Card className="w-[220px]">
         <CardHeader>
           <CardTitle>登录</CardTitle>
-          <CardDescription>登录你的帐号.</CardDescription>
+          <CardDescription>登录您的帐号。</CardDescription>
         </CardHeader>
         <CardContent
           className={"flex flex-col items-center justify-center gap-2"}
